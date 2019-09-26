@@ -11,7 +11,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-      <link rel="shortcut icon" href="imagenes/logoUNI.ico" type="image/x-icon">
+      <link rel="shortcut icon" href="imagenes/logo.JPG" type="image/x-icon">
       <link rel="stylesheet" href="css/reloj.css">
       <link rel="stylesheet" href="css/index.css">
 </head>

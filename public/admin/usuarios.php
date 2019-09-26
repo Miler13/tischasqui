@@ -21,7 +21,7 @@ if(isset($_SESSION['NombreUsuario'])) {
     <meta name="description" content="">
     <meta name="author" content="">
     <title>CHASQUI</title>
-    <link rel="shortcut icon" href="../imagenes/logoUNI.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../imagenes/logo.JPG" type="image/x-icon">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="../css/modern-business.css" rel="stylesheet">
     <link href="../css/estilo.css" rel="stylesheet">
@@ -49,7 +49,7 @@ if(isset($_SESSION['NombreUsuario'])) {
         <div class="container">
             <div class="row">
             <div class="col-lg-12">
-            <div class="col-md-3"><img src="../imagenes/logoSiad.png" width="80" height="80" class="img-responsive"></div>
+            <div class="col-md-3"><img src="../imagenes/logo.JPG" width="80" height="80" class="img-responsive"></div>
              <div class="col-md-6">         
                
                 <img src="../imagenes/baner.png" class="img-responsive">

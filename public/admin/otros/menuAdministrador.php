@@ -34,7 +34,7 @@
                     <div class="panel-body">
                         <h4 class="media-heading">niños</h4>
                          <p>Total de niños: <span class="label label-danger pull-right"><?php echo $TotalEstudiantes ?></span></p>
-                         <a href="estudiantes.php" class="btn btn-success"><i class="fa fa-mail-forward"></i>  Entrar</a>
+                         <a href="nino.php" class="btn btn-success"><i class="fa fa-mail-forward"></i>  Entrar</a>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     <div class="panel-body">
                          <h4 class="media-heading">Doctores</h4>
                        <p>Total de Doctoress: <span class="label label-danger pull-right"><?php echo $TotalDocentes ?></span></p>
-                       <a href="docentes.php" class="btn btn-success"><i class="fa fa-mail-forward"></i>  Entrar</a>
+                       <a href="doctores.php" class="btn btn-success"><i class="fa fa-mail-forward"></i>  Entrar</a>
                     </div>                    
                 </div>
             </div>
@@ -68,9 +68,9 @@
                         </span>
                     </div>                    
                     <div class="panel-body">
-                       <h4 class="media-heading">Registrar Areas</h4>
-                       <p>Total de Areas: <span class="label label-danger pull-right"><?php echo $TotalAsignaturas ?></span></p>
-                       <a href="asignaturas.php" class="btn btn-success"><i class="fa fa-mail-forward"></i>  Entrar</a>
+                       <h4 class="media-heading">Registrar Sub Areas</h4>
+                       <p>Total de Sub Areas: <span class="label label-danger pull-right"><?php echo $TotalAsignaturas ?></span></p>
+                       <a href="subarea.php" class="btn btn-success"><i class="fa fa-mail-forward"></i>  Entrar</a>
                     </div>
 
                 </div>
@@ -120,9 +120,9 @@
                     
                     </div>
                     <div class="panel-body">
-                          <h4 class="media-heading">Gestion</h4>
-                      <p>Total de Gestion: <span class="label label-danger pull-right"><?php echo $TotalSemestre?></span></p>
-                      <a href="semestre.php" class="btn btn-success"><i class="fa fa-mail-forward"></i>  Entrar</a>
+                          <h4 class="media-heading"> Area</h4>
+                      <p>Total de Areas: <span class="label label-danger pull-right"><?php echo $TotalCarreras?></span></p>
+                      <a href="areas.php" class="btn btn-success"><i class="fa fa-mail-forward"></i>  Entrar</a>
                     </div>
 
                

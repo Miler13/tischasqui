@@ -24,20 +24,7 @@
                             <li>
                                 <a href="ayuda.php"><i class="glyphicon glyphicon-exclamation-sign"></i> Ayuda</a>
                             </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-lock"></i> Administracion <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="admin/admin.php">Administrador</a>
-                            </li>
-                            <li>
-                                <a href="docentes/docentes.php">Doctores</a>
-                            </li>
-                            <li>
-                                <a href="estudiantes/estudiantes.php">Niños</a>
-                            </li>
-                        </ul>
-                    </li>
+                    
                      <li>
                         <a href="index.l.php"><i class="glyphicon glyphicon-user"></i> Login</a>
                      </li>
