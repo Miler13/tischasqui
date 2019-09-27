@@ -31,7 +31,7 @@ if(isset($_SESSION['NombreUsuario'])) {
     <script src="../js/jquery.js"></script>
     <script src="js/back-to-top.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script src="estudiantes/myjava.js"></script>
+    <script src="ninos/myjava.js"></script>
 </head>
 <body>
            <?php
@@ -61,6 +61,7 @@ if(isset($_SESSION['NombreUsuario'])) {
                 </ol>
             </div>
         </div>
+        
         <!-- /.row -->
         <!-- Content Row -->
 <?php include('otros/menuAdministrador.php') ?>

@@ -12,7 +12,7 @@ $(function(){
 	});	
 	$('#bs-prod').on('keyup',function(){
 		var dato = $('#bs-prod').val();
-		var url = 'Subarea/busca_asignatura.php';
+		var url = 'Subarea/busca_subarea.php';
 		$.ajax({
 		type:'POST',
 		url:url,
@@ -25,7 +25,7 @@ $(function(){
 	});	
 });
 function agregarRegistro(){
-	var url = 'subarea/agrega_asignatura.php';
+	var url = 'subarea/agrega_subarea.php';
 	$.ajax({
 		type:'POST',
 		url:url,
@@ -47,7 +47,7 @@ function agregarRegistro(){
 	return false;
 }
 function eliminarRegistro(id){
-	var url = 'subarea/elimina_asignatura.php';
+	var url = 'subarea/elimina_subarea.php';
 	var pregunta = confirm('¿Esta seguro de eliminar este Registro?');
 	if(pregunta==true){
 		$.ajax({
@@ -66,21 +66,23 @@ function eliminarRegistro(id){
 }
 function editarRegistro(id){
 	$('#formulario')[0].reset();
-	var url = 'subarea/edita_asignatura.php';
+	var url = 'subarea/edita_subarea.php';
+	$va='1';
 		$.ajax({
 		type:'POST',
 		url:url,
 		data:'id='+id,
+		
 		success: function(valores){
 				var datos = eval(valores);
 				$('#reg').hide();
 				$('#edi').show();
 				$('#pro').val('Edicion');
 				$('#id-registro').val(id);
-				$('#nombre').val(datos[0]);
-				$('#carrera').val(datos[1]);
-				$('#year').val(datos[2]);
-				$('#semestre').val(datos[3]);
+				$('#subarea').val(datos[0]);
+				$('#Area').val(datos[1]);
+				$va.val(datos[2]);
+				
 				$('#registra-datos').modal({
 					show:true,
 					backdrop:'static'
@@ -92,7 +94,7 @@ function editarRegistro(id){
 }
 
 function pagination(partida){
-	var url = 'subarea/paginar_asignatura.php';
+	var url = 'subarea/paginar_subarea.php';
 	$.ajax({
 		type:'POST',
 		url:url,

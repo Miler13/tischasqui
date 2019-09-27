@@ -12,7 +12,7 @@ $(function(){
 	});	
 	$('#bs-prod').on('keyup',function(){
 		var dato = $('#bs-prod').val();
-		var url = 'ninos/busca_estudiante.php';
+		var url = 'ninos/busca_nino.php';
 		$.ajax({
 		type:'POST',
 		url:url,
@@ -25,7 +25,7 @@ $(function(){
 	});	
 });
 function agregarRegistro(){
-	var url = 'ninos/agrega_estudiante.php';
+	var url = 'ninos/agrega_nino.php';
 	$.ajax({
 		type:'POST',
 		url:url,
@@ -47,7 +47,7 @@ function agregarRegistro(){
 	return false;
 }
 function eliminarRegistro(id){
-	var url = 'ninos/elimina_estudiante.php';
+	var url = 'ninos/elimina_nino.php';
 	var pregunta = confirm('¿Esta seguro de eliminar este Registro?');
 	if(pregunta==true){
 		$.ajax({
@@ -66,7 +66,7 @@ function eliminarRegistro(id){
 }
 function editarRegistro(id){
 	$('#formulario')[0].reset();
-	var url = 'ninos/edita_estudiante.php';
+	var url = 'ninos/edita_nino.php';
 		$.ajax({
 		type:'POST',
 		url:url,
@@ -79,14 +79,11 @@ function editarRegistro(id){
 				$('#id-registro').val(id);
 				$('#carnet').val(datos[0]);
 				$('#nombre').val(datos[1]);
-				$('#apellido').val(datos[2]);
-				$('#cedula').val(datos[3]);
-				$('#correo').val(datos[4]);
-				$('#celular').val(datos[5]);
-				$('#telefono').val(datos[6]);
-				$('#direccion').val(datos[7]);
-				$('#estado').val(datos[8]);
-				$('#grupo').val(datos[9]);
+				
+				$('#cedula').val(datos[2]);
+				
+				$('#estado').val(datos[3]);
+				
 				$('#registra-datos').modal({
 					show:true,
 					backdrop:'static'
@@ -98,7 +95,7 @@ function editarRegistro(id){
 }
 
 function pagination(partida){
-	var url = 'ninos/paginar_estudiante.php';
+	var url = 'ninos/paginar_Nino.php';
 	$.ajax({
 		type:'POST',
 		url:url,

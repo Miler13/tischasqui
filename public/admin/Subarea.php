@@ -13,8 +13,8 @@ if(isset($_SESSION['NombreUsuario'])) {
                  }
         ?>
            <?php 
-          $consulta1="select IdCarrera, NombreCarrera from carreras";
-          $carrera=mysqli_query($conexion,$consulta1);
+          $consulta1="select IdArea, NombreArea from areas";
+          $Area=mysqli_query($conexion,$consulta1);
            $consulta2="select idGrupo, NumeroGrupo from grupos";
           $grupos=mysqli_query($conexion,$consulta2);
            $consulta3="select idSemestre, NombreSemestre from semestres ";
@@ -121,7 +121,7 @@ if(isset($_SESSION['NombreUsuario'])) {
 		   <h4 style="font-weight: bold;"> 
     <?php
 include('conexion.php');
-    $numeroRegistros = mysqli_num_rows(mysqli_query($conexion,"SELECT * FROM asignaturas"));
+    $numeroRegistros = mysqli_num_rows(mysqli_query($conexion,"SELECT * FROM subareas"));
     echo "Registros Totales: $numeroRegistros";
         ?>
         </h4>
@@ -148,14 +148,14 @@ include('conexion.php');
 				<div class="col-md-10"><input type="text" class="form-control" required readonly id="pro" name="pro" hidden="true" /></div>
 			   </div> <br>
 
-               <div class="form-group"> <label for="carnet" class="col-md-2 control-label">SubArea:</label>
-				<div class="col-md-10"><input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre de la Asignatura" onkeypress="return sololetras(event)" required maxlength="50"></div>
+               <div class="form-group"> <label for="subarea" class="col-md-2 control-label">SubArea:</label>
+				<div class="col-md-10"><input type="text" class="form-control" id="subarea" name="subarea" placeholder="Ingrese el nombre de la Sub Area" onkeypress="return sololetras(event)" required maxlength="50"></div>
 			   </div> <br>    
                      <div class="form-group"> <label for="carrera" class="col-md-2 control-label">Area:</label>
                          <div class="col-md-10">
-                       <select class="form-control" id="carrera" name="carrera">
+                       <select class="form-control" id="Area" name="Area">
                      <?php 
-                          while($fila=mysqli_fetch_row($carrera)){
+                          while($fila=mysqli_fetch_row($Area)){
                           echo "<option value='".$fila['0']."'>".$fila['1']."</option>";
                           }
                           ?>

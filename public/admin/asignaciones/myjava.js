@@ -78,8 +78,8 @@ function editarRegistro(id){
 				$('#pro').val('Edicion');
 				$('#id-registro').val(id);
 				$('#nombre').val(datos[0]);
-				$('#docente').val(datos[1]);
-				$('#asignatura').val(datos[2]);
+				$('#Especialista').val(datos[1]);
+				$('#SubArea').val(datos[2]);
 				$('#grupo').val(datos[3]);
 				$('#turno').val(datos[4]);
 				$('#horario').val(datos[5]);

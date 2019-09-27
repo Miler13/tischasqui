@@ -5,13 +5,12 @@ $valores = mysqli_query($conexion,"SELECT * FROM asignaciones WHERE idAsignacion
 $valores2 = mysqli_fetch_array($valores);
 $datos = array(
 				0 => $valores2['Descripcion'], 
-				1 => $valores2['idDocente'], 
-		        2 => $valores2['idAsignatura'], 
+				1 => $valores2['idEspecialista'], 
+		        2 => $valores2['idSubArea'], 
 		        3 => $valores2['idGrupo'], 
-		        4 => $valores2['idTurno'], 
-		        5 => $valores2['idHorario'],
-		        6 => $valores2['Estado'],
-		        7 => $valores2['NumeroAsignacion'],
+		        
+		        4 => $valores2['Estado'],
+		        5 => $valores2['NumeroAsignacion'],
 				); 
 
 echo json_encode($datos);

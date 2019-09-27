@@ -32,9 +32,9 @@ if(isset($_SESSION['NombreUsuario'])) {
     <script src="../js/bootstrap.min.js"></script>
     <script src="areas/myjava.js"></script>
 
-    <link href="css/sweetalert.css" rel="stylesheet">
+  <!-- /.row --   <link href="css/sweetalert.css" rel="stylesheet">
     <script src="js/functions.js"></script>
-    <script src="js/sweetalert.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>-->
     <script src="validar.js"></script>
 </head>
 <body>
@@ -100,7 +100,7 @@ if(isset($_SESSION['NombreUsuario'])) {
 		   <h4 style="font-weight: bold;"> 
     <?php
 include('conexion.php');
-    $numeroRegistros = mysqli_num_rows(mysqli_query($conexion,"SELECT * FROM carreras"));
+    $numeroRegistros = mysqli_num_rows(mysqli_query($conexion,"SELECT * FROM areas"));
     echo "Registros Totales: $numeroRegistros";
         ?>
         </h4>

@@ -13,16 +13,13 @@ if(isset($_SESSION['NombreUsuario'])) {
                  }
         ?>
            <?php 
-          $consulta1="select idDocente, concat(NombresDocente, ' ' ,ApellidosDocente) as Docentes FROM docentes";
-          $docente=mysqli_query($conexion,$consulta1);
-          $consulta2="select idAsignatura, NombreAsignatura from asignaturas";
-          $asignatura=mysqli_query($conexion,$consulta2);
+          $consulta1="select idEspecialista, concat(NombresEspecialista, ' ' ,ApellidosEspecialista) as Especialistas FROM Especialistas";
+          $Especialista=mysqli_query($conexion,$consulta1);
+          $consulta2="select idSubArea, NombreSubArea from subareas";
+          $subarea=mysqli_query($conexion,$consulta2);
           $consulta3="select idGrupo, NumeroGrupo from grupos";
           $grupo=mysqli_query($conexion,$consulta3);
-          $consulta4="select idTurno, NombreTurno from turnos";
-          $turno=mysqli_query($conexion,$consulta4);
-          $consulta5="select idHorario, NombreHorario from horarios";
-          $horario=mysqli_query($conexion,$consulta5);
+         
 
          
         ?>
@@ -34,8 +31,8 @@ if(isset($_SESSION['NombreUsuario'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Sistema de Laboratorios de informatica-sistemas UMSS UNI</title>
-    <link rel="shortcut icon" href="../imagenes/logoUNI.ico" type="image/x-icon">
+    <title>CHASQUI</title>
+    <link rel="shortcut icon" href="../imagenes/logo.JPG" type="image/x-icon">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="../css/modern-business.css" rel="stylesheet">
     <link href="../css/estilo.css" rel="stylesheet">
@@ -46,9 +43,9 @@ if(isset($_SESSION['NombreUsuario'])) {
     <script src="../js/bootstrap.min.js"></script>
     <script src="asignaciones/myjava.js"></script>
 
-    <link href="css/sweetalert.css" rel="stylesheet">
+ <!---   <link href="css/sweetalert.css" rel="stylesheet">
     <script src="js/functions.js"></script>
-    <script src="js/sweetalert.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>-->
 </head>
 <body>
            <?php
@@ -58,7 +55,7 @@ if(isset($_SESSION['NombreUsuario'])) {
         <div class="container">
             <div class="row">
             <div class="col-lg-12">
-            <div class="col-md-3"><img src="../imagenes/logoSiad.png" width="80" height="80" class="img-responsive"></div>
+            <div class="col-md-3"><img src="../imagenes/logo.JPG" width="80" height="80" class="img-responsive"></div>
              <div class="col-md-6">         
                
                 <img src="../imagenes/baner.png" class="img-responsive">
@@ -100,8 +97,7 @@ if(isset($_SESSION['NombreUsuario'])) {
 		               </div>
 		               	<div class="col-md-6">
 		                  <button id="nuevo-producto" class="btn btn-success"> <i class="glyphicon glyphicon-plus"></i> Nueva Asignacion</button> 
-		                  <a href="reportes/Reporte_Asignaciones.php"> <button class="btn btn-primary"><i class="fa fa-file-pdf-o"></i>  Exportar a PDF</button> </a>
-                      <a href="ReportesAsignaciones.php"> <button class="btn btn-success"><i class="glyphicon glyphicon-eye-open"></i> Ver mas</button> </a>
+		                  
 		               </div>
 	              <br>
  <br>
@@ -145,22 +141,23 @@ include('conexion.php');
                <div class="form-group"> <label for="carnet" class="col-md-2 control-label">Descripcion:</label>
 				<div class="col-md-10"><input type="text" class="form-control" id="nombre" name="nombre" required maxlength="50"></div>
 			   </div> <br>    
-                     <div class="form-group"> <label for="carrera" class="col-md-2 control-label">Docente:</label>
+                     <div class="form-group"> <label for="area" class="col-md-2 control-label">Especialista:</label>
                          <div class="col-md-10">
-                       <select class="form-control" id="docente" name="docente">
+                       <select class="form-control" id="Especialista" name="Especialista">
                      <?php 
-                          while($fila=mysqli_fetch_row($docente)){
+                          while($fila=mysqli_fetch_row($Especialista)){
                           echo "<option value='".$fila['0']."'>".$fila['1']."</option>";
                           }
                           ?>
                       </select>
                        </div>
                     </div> <br>
-                    <div class="form-group"> <label for="semestre" class="col-md-2 control-label">Asignatura:</label>
+
+                    <div class="form-group"> <label for="semestre" class="col-md-2 control-label">SubArea:</label>
                          <div class="col-md-10">
                        <select class="form-control" id="asignatura" name="asignatura">
                      <?php 
-                          while($fila=mysqli_fetch_row($asignatura)){
+                          while($fila=mysqli_fetch_row($subarea)){
                           echo "<option value='".$fila['0']."'>".$fila['1']."</option>";
                           }
                           ?>
@@ -180,30 +177,7 @@ include('conexion.php');
                        </div>
                     </div> <br>
 
-                        <div class="form-group"> <label for="year" class="col-md-2 control-label">Turno:</label>
-                         <div class="col-md-10">
-                       <select class="form-control" id="turno" name="turno">
-                     <?php 
-                          while($fila=mysqli_fetch_row($turno)){
-                          echo "<option value='".$fila['0']."'>".$fila['1']."</option>";
-                          }
-                          ?>
-                      </select>
-                       </div>
-                    </div> <br>
-
-                     <div class="form-group"> <label for="year" class="col-md-2 control-label">Horario:</label>
-                         <div class="col-md-10">
-                       <select class="form-control" id="horario" name="horario">
-                     <?php 
-                          while($fila=mysqli_fetch_row($horario)){
-                          echo "<option value='".$fila['0']."'>".$fila['1']."</option>";
-                          }
-                          ?>
-                      </select>
-                       </div>
-
-                    </div> <br>
+                      
                     <div class="form-group"> <label for="year" class="col-md-2 control-label">Estado:</label>
                          <div class="col-md-10">
                        <select class="form-control" id="estado" name="estado">

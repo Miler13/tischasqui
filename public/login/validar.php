@@ -21,13 +21,13 @@
 				  		echo '<script> window.location="../admin/admin.php"; </script>';
 				  	}
 					  	  elseif ($_SESSION["NivelUsuario"] == 2) {
-					  	 	echo '<script> window.location="../docentes/docentes.php"; </script>';
+					  	 	echo '<script> window.location="../index.php"; </script>';
 							}
 						   elseif ($_SESSION["NivelUsuario"] == 3) {
-							echo '<script> window.location="../estudiantes/estudiantes.php"; </script>'; 
+							echo '<script> window.location="../index.php"; </script>'; 
 						}
 							 else {
-						  	 	echo '<script> window.location="../auxiliares/auxiliares.php"; </script>';
+						  	 	echo '<script> window.location="../index.php"; </script>';
 						  	 	echo $numero;
 						  	 }
 				}

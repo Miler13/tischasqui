@@ -5,8 +5,8 @@ include('../conexion.php');
 $id = $_POST['id-registro'];
 $proceso = $_POST['pro'];
 $nombre = $_POST['nombre'];
-$docente = $_POST['docente'];
-$asignatura = $_POST['asignatura'];
+$Especialista = $_POST['Especialista'];
+$SubArea = $_POST['SubArea'];
 $grupo = $_POST['grupo'];
 $turno = $_POST['turno'];
 $horario = $_POST['horario'];
@@ -14,24 +14,22 @@ $estado = $_POST['estado'];
 $numero = $_POST['numero'];
 
 switch($proceso){
-	case 'Registro': mysqli_query($conexion,"INSERT INTO asignaciones (Descripcion, idDocente, idAsignatura, idGrupo, idTurno, idHorario, Estado, NumeroAsignacion) VALUES('$nombre','$docente','$asignatura','$grupo','$turno','$horario','$estado','$numero')");
+	case 'Registro': mysqli_query($conexion,"INSERT INTO asignaciones (Descripcion, idEspecialista, idSubArea, idGrupo,  Estado, NumeroAsignacion) VALUES('$nombre','$Especialista','$SubArea','$grupo','$estado','$numero')");
 	break;
-	case 'Edicion': mysqli_query($conexion,"UPDATE asignaciones SET Descripcion = '$nombre', idAsignatura = '$asignatura',idGrupo = '$grupo',idTurno = '$turno',idHorario = '$horario' ,Estado = '$estado',NumeroAsignacion = '$numero' where idAsignacion = '$id'");
+	case 'Edicion': mysqli_query($conexion,"UPDATE asignaciones SET Descripcion = '$nombre', idSubArea = '$SubArea',idGrupo = '$grupo',idTurno = '$turno',idHorario = '$horario' ,Estado = '$estado',NumeroAsignacion = '$numero' where idAsignacion = '$id'");
 	break;
    }
-    $registro = mysqli_query($conexion,"SELECT  asignaciones.idAsignacion AS id, asignaciones.Descripcion AS Asignacion,concat(docentes.NombresDocente,' ',docentes.ApellidosDocente) as Docente, 
-             asignaturas.NombreAsignatura AS Asignatura, grupos.NumeroGrupo AS Grupo, turnos.NombreTurno AS Turno, horarios.NombreHorario AS Horario, asignaciones.Estado AS Estado, asignaciones.NumeroAsignacion AS NumeroA
-FROM       asignaciones INNER JOIN docentes ON asignaciones.idDocente = docentes.idDocente 
-                        INNER JOIN asignaturas ON asignaciones.idAsignatura = asignaturas.idAsignatura 
-            INNER JOIN grupos ON asignaciones.idGrupo = grupos.idGrupo 
-            INNER JOIN turnos ON asignaciones.idTurno = turnos.idTurno 
-            INNER JOIN horarios ON asignaciones.idHorario = horarios.idHorario ORDER BY asignaciones.idAsignacion ASC");
+    $registro = mysqli_query($conexion,"SELECT  asignaciones.idAsignacion AS id, asignaciones.Descripcion AS Asignacion,concat(Especialistas.NombresEspecialista,' ',Especialistas.ApellidosEspecialista) as Especialista, 
+             subareas.NombreSubArea AS SubArea, grupos.NumeroGrupo AS Grupo,  asignaciones.Estado AS Estado, asignaciones.NumeroAsignacion AS NumeroA
+FROM       asignaciones INNER JOIN Especialistas ON asignaciones.idEspecialista = Especialistas.idEspecialista 
+                        INNER JOIN subareas ON asignaciones.idSubArea = subareas.idSubArea 
+             ORDER BY asignaciones.idAsignacion ASC");
 
     echo '<table class="table table-striped table-condensed table-hover">
         	 <tr>
                           <th width="10%">Descripcion</th>  
-                        <th width="15%">Docente</th> 
-                        <th width="15%">Asignatura</th>
+                        <th width="15%">Especialista</th> 
+                        <th width="15%">SubArea</th>
                         <th width="7%">Grupo</th>
                         <th width="8%">Turno</th>        
                         <th width="15%">Horario</th>
@@ -42,8 +40,8 @@ FROM       asignaciones INNER JOIN docentes ON asignaciones.idDocente = docentes
 	while($registro2 = mysqli_fetch_array($registro)){
 		echo '<tr>
                         <td>'.$registro2['Asignacion'].'</td>
-                          <td>'.$registro2['Docente'].'</td>
-                          <td>'.$registro2['Asignatura'].'</td>
+                          <td>'.$registro2['Especialista'].'</td>
+                          <td>'.$registro2['SubArea'].'</td>
                           <td>'.$registro2['Grupo'].'</td>
                           <td>'.$registro2['Turno'].'</td>
                           <td>'.$registro2['Horario'].'</td>

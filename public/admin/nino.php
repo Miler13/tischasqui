@@ -115,7 +115,7 @@ if(isset($_SESSION['NombreUsuario'])) {
 		   <h4 style="font-weight: bold;"> 
     <?php
 include('conexion.php');
-    $numeroRegistros = mysqli_num_rows(mysqli_query($conexion,"SELECT * FROM estudiantes"));
+    $numeroRegistros = mysqli_num_rows(mysqli_query($conexion,"SELECT * FROM ninos"));
     echo "Registros Totales: $numeroRegistros";
         ?>
         </h4>
@@ -147,10 +147,10 @@ include('conexion.php');
 			            
 			            <div class="form-group"> <label for="cedula" class="col-md-2 control-label">Contraseña:</label>
 				            <div class="col-md-10"><input type="text" class="form-control" id="cedula" name="cedula" placeholder="Ingrese su carnet de identidad" onkeypress="return solonumeros(event)" required maxlength="10" minlength="5"></div>
-			            </div><br>
+			            </div>
 			            
                     
-			            </div>
+        
 			            <div class="form-group"> <label for="estado" class="col-md-2 control-label">Estado:</label>
 				            <div class="col-md-10">
                       <select class="form-control" id="estado" name="estado" required="">

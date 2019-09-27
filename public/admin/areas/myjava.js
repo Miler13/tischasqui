@@ -12,7 +12,7 @@ $(function(){
 	});	
 	$('#bs-prod').on('keyup',function(){
 		var dato = $('#bs-prod').val();
-		var url = 'areas/busca_carrera.php';
+		var url = 'areas/busca_area.php';
 		$.ajax({
 		type:'POST',
 		url:url,
@@ -25,7 +25,7 @@ $(function(){
 	});	
 });
 function agregarRegistro(){
-	var url = 'areas/agrega_carrera.php';
+	var url = 'areas/agrega_area.php';
 	$.ajax({
 		type:'POST',
 		url:url,
@@ -47,7 +47,7 @@ function agregarRegistro(){
 	return false;
 }
 function eliminarRegistro(id){
-	var url = 'areas/elimina_carrera.php';
+	var url = 'areas/elimina_area.php';
 	var pregunta = confirm('¿Esta seguro de eliminar este Registro?');
 	if(pregunta==true){
 		$.ajax({
@@ -66,7 +66,7 @@ function eliminarRegistro(id){
 }
 function editarRegistro(id){
 	$('#formulario')[0].reset();
-	var url = 'areas/edita_carrera.php';
+	var url = 'areas/edita_area.php';
 		$.ajax({
 		type:'POST',
 		url:url,
@@ -89,7 +89,7 @@ function editarRegistro(id){
 }
 
 function pagination(partida){
-	var url = 'areas/paginar_carrera.php';
+	var url = 'areas/paginar_area.php';
 	$.ajax({
 		type:'POST',
 		url:url,
