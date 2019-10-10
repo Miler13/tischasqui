@@ -41,7 +41,7 @@ if(isset($_SESSION['NombreUsuario'])) {
 
 <body>
 <?php
-include ('menu_inicio_docente.php');
+include ('menu_inicio_especialista.php');
  ?>
 <br>
     <!-- Page Content -->
@@ -51,10 +51,10 @@ include ('menu_inicio_docente.php');
 
             <div class="row">
             <div class="col-lg-12">
-            <div class="col-md-3"><img src="../imagenes/logo.jpg" width="80" height="80" class="img-responsive"></div>
+            <div class="col-md-3"><img src=" " width="80" height="80" class="img-responsive"></div>
                  <div class="col-md-6">
 
-                <img src="../imagenes/baner.png" class="img-responsive">
+                <img src="" class="img-responsive">
 
              </div>
                <div class="col-md-3">
@@ -68,7 +68,7 @@ include ('menu_inicio_docente.php');
             <div class="col-lg-12">
                     <ol class="breadcrumb">
                     <li><a href="../index.php">Inicio</a></li>
-                    <li class="active">Docentes</li>
+                    <li class="active">Especialistas</li>
                 </ol>
             </div>
         <!-- /.row -->
@@ -77,7 +77,7 @@ include ('menu_inicio_docente.php');
 
             <!-- Sidebar Column -->
             <?php
-include ('menu_docente.php');
+include ('menu_especialista.php');
  ?>
             <!-- Content Column -->
            

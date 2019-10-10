@@ -46,7 +46,7 @@
                          <div class="wrap">
 				          <div class="widget">
                              <div class="fecha"> 
-                                <p>Hora</p><br>
+                                <br>
 					            <p id="diaSemana" class="diaSemana"></p>
 					            <p id="dia" class="dia"></p>
 					            <p>de </p>
