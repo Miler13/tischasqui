@@ -8,15 +8,15 @@ if(isset($_SESSION['NombreUsuario'])) {
             $user = $_SESSION['NombreUsuario'];
             $codigo = $_SESSION["Codigo"];
 
-              $consulta=mysqli_query($conexion,"select Foto from especialistas where idEspacilista = $codigo");
+              $consulta=mysqli_query($conexion,"select Foto from especialistas where idEspecialista = $codigo");
                 while($filas=mysqli_fetch_array($consulta)){
                          $foto=$filas['Foto'];
                  }
 
-                 $consulta2 = mysqli_query($conexion,"select concat (NombresEspecialista, ' ', ApellidosEspecialista) as especilista from Especialistas where idDocente = $codigo");
-                 while($filas2=mysqli_fetch_array($consulta2)){
-                         $docente=$filas2['especialista'];
-                 }
+                // $consulta2 = mysqli_query($conexion,"select concat (NombresEspecialista, ' ', ApellidosEspecialista) as especilista from Especialistas where idEspecialista = $codigo");
+                 //while($filas2=mysqli_fetch_array($consulta2)){
+                   //      $docente=$filas2['Nombrespecialista'];
+                // }
         ?>
 
 <!DOCTYPE html>
