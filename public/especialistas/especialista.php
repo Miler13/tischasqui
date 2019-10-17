@@ -33,10 +33,15 @@ if(isset($_SESSION['NombreUsuario'])) {
     <title>Chasqui</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="../css/modern-business.css" rel="stylesheet">
+    <link href="../css/estilo.css" rel="stylesheet">
+    <link href="../css/modern-business.css" rel="stylesheet">
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-      <link rel="shortcut icon" href="../imagenes/logo.jpg" type="image/x-icon">
-      <link rel="stylesheet" href="css/reloj.css">
-      <link rel="stylesheet" href="css/index.css">
+    <script src="../js/jquery.js"></script>
+    <script src="js/back-to-top.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+      <script src="mensajes/myjava.js"></script>
+
+     
 </head>
 
 <body>
@@ -59,7 +64,7 @@ include ('menu_inicio_especialista.php');
              </div>
                <div class="col-md-3">
               <img class="img-responsive img-circle" src="<?php echo $foto ?>" width="50px" height="50px">
-              <h5><i class="fa fa-circle fa-stack-1x fa-inverse" style="color:green; text-align: left; "></i><b> &nbsp; Online:</b> <?php echo $user ?></h5>
+              <!--<h5><i class="fa fa-circle fa-stack-1x fa-inverse" style="color:green; text-align: left; "></i><b> &nbsp; Online:</b> <?php echo $user ?></h5>-->
                </div>
 
             </div>
@@ -79,23 +84,65 @@ include ('menu_inicio_especialista.php');
             <?php
 include ('menu_especialista.php');
  ?>
+      
+
             <!-- Content Column -->
-           
-        <!-- /.row -->
+            <div class="col-md-9">
+                <div class="container">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+            <div class="btn-group pull-right">
+            </div>
+            <center><h4><b>Administracion de Mensajes</b></h4></center>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+		               <div class="col-md-1"><h4>Buscar:</h4></div>
+		               <div class="col-md-5">
+		               <input type="text" name="s" id="bs-prod" class="form-control" placeholder="Escribir el nombre del Remitente">
+		               </div>
+		               	<div class="col-md-6">
+		               </div>
+	              <br>
+ <br>
+    <div class="registros" style="width:100%;" id="agrega-registros"></div>
+      <div class="col-md-6" style="text-align: left;">
+		    <center>
+		        <ul class="pagination" id="pagination"></ul>
+		    </center>
+      </div>
+      <div class="col-md-6">
+		   <center>
+		   <h4 style="font-weight: bold;"> 
+    <?php
 
-        <hr>
+    $numeroRegistros = mysqli_num_rows(mysqli_query($conexion,"SELECT * FROM mensajes"));
+    echo "Registros Totales: $numeroRegistros";
+        ?>
+        </h4>
+          </center>
+      </div>
+   
 
-        <!-- Footer -->
 
-
+   
+  
+    <!-- MODAL PARA EL REGISTRO-->
+   
+            </div>
+        </div>
     </div>
-    <!-- /.container -->
 
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+            </div>
+                    
+        </div>
+        <!-- Fin del Panel -->
+      </div>
+    </div>
+</div>
+</div>
+        <hr>
+    </div>
     <?php
     include('../includes/footer.php');
  ?>

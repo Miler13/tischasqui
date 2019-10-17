@@ -38,7 +38,7 @@
             </div>
 
              <div class="row">
-             <div class="col-md-5 col-sm-4">
+             <div class="col-md-4 col-sm-4">
                 <div class="panel panel-default text-center">
                 <div class="panel-heading">
                          <div class="wrap">
@@ -83,7 +83,7 @@
                 </div>
             </div>
 
-            <div class="col-md-5 col-sm-4">
+            <div class="col-md-4 col-sm-4">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
                         <img src="imagenes/nino.png">
@@ -96,6 +96,20 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <img src="imagenes/Boletines.png" width="250" height="150">
+                    </div>
+                    <div class="panel-body">
+                        <h4>Boletines </h4>
+                        <p> todas las publicaciones</p>
+                        <a href="" class="btn btn-primary"><i class="glyphicon glyphicon-download-alt"></i> Entrar</a>
+                        
+                    </div>
+                </div>
+            </div>
+
 
                      
         </div>
