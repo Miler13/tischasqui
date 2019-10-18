@@ -15,10 +15,7 @@ if(isset($_SESSION['NombreUsuario'])) {
            <?php 
           $consulta1="select IdArea, NombreArea from areas";
           $Area=mysqli_query($conexion,$consulta1);
-           $consulta2="select idGrupo, NumeroGrupo from grupos";
-          $grupos=mysqli_query($conexion,$consulta2);
-           $consulta3="select idSemestre, NombreSemestre from semestres ";
-          $semestre=mysqli_query($conexion,$consulta3);
+         
         ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -85,22 +85,44 @@ include ('menu_especialista.php');
  ?>
       
 
-           <!-- Content Column -->
-           <div class="col-md-9 col-sm-4">
-                <div class="panel panel-default text-center">
-                    
-                    <div class="panel-body">
-                        <h4>Bienvenido </h4>
-                        <p> El trabajo en equipo es la capacidad de trabajar juntos hacia una visión común. La capacidad de dirigir los logros individuales hacia los objetivos de la organización. Es el combustible que permite que la gente normal logre resultados poco comunes</p>
-                        
-                        <div class="col-md-9 col-sm-4">
-                        <img src="images/espe.png" class="img-responsive" width="100%" height="100%">
-                        </div>
-                    </div>
-                </div>
+            <!-- Content Column -->
+            <div class="col-md-9">
+                <div class="container">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+            <div class="btn-group pull-right">
             </div>
+            <center><h4><b>Administracion de Mensajes</b></h4></center>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+		               <div class="col-md-1"><h4>Buscar:</h4></div>
+		               <div class="col-md-5">
+		               <input type="text" name="s" id="bs-prod" class="form-control" placeholder="Escribir el nombre del Remitente">
+		               </div>
+		               	<div class="col-md-6">
+		               </div>
+	              <br>
+ <br>
+    <div class="registros" style="width:100%;" id="agrega-registros"></div>
+      <div class="col-md-6" style="text-align: left;">
+		    <center>
+		        <ul class="pagination" id="pagination"></ul>
+		    </center>
+      </div>
+      <div class="col-md-6">
+		   <center>
+		   <h4 style="font-weight: bold;"> 
+    <?php
 
+    $numeroRegistros = mysqli_num_rows(mysqli_query($conexion,"SELECT * FROM mensajes"));
+    echo "Registros Totales: $numeroRegistros";
+        ?>
+        </h4>
+          </center>
+      </div>
    
+
 
    
   
