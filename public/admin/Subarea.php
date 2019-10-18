@@ -66,7 +66,7 @@ if(isset($_SESSION['NombreUsuario'])) {
                     <ol class="breadcrumb">
                     <li><a href="../index.php">Inicio</a></li>
                     <li><a href="admin.php">Administrador</a></li>
-                    <li class="active">Areas</li>
+                    <li class="active">SubAreas</li>
                 </ol>
             </div>
         </div> 
@@ -87,7 +87,7 @@ if(isset($_SESSION['NombreUsuario'])) {
         <?php
        include ('conexion.php');
 
-           $TotalGrupos = mysqli_num_rows(mysqli_query($conexion,"SELECT * FROM grupos"));
+          
         ?>
 
                 

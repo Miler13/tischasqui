@@ -86,19 +86,6 @@
             <div class="col-md-4 col-sm-4">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
-                        <img src="imagenes/nino.png">
-                    </div>
-                    <div class="panel-body">
-                        <h4>Niños </h4>
-                        <p> Bienvenidos</p>
-                        <a href="loginNinos.php" class="btn btn-primary"><i class="glyphicon glyphicon-download-alt"></i> Entrar</a>
-                        <a href="renino.php" class="btn btn-success"><i class="fa fa-mail-forward"></i> Registrate</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
                         <img src="imagenes/Boletines.png" width="250" height="150">
                     </div>
                     <div class="panel-body">
@@ -109,6 +96,20 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <img src="imagenes/ninos.png" width="250" height="150">
+                    </div>
+                    <div class="panel-body">
+                        <h4>Niños </h4>
+                        <p> Bienvenidos</p>
+                        <a href="loginNinos.php" class="btn btn-primary"><i class="glyphicon glyphicon-download-alt"></i> Entrar</a>
+                        <a href="renino.php" class="btn btn-success"><i class="fa fa-mail-forward"></i> Registrate</a>
+                    </div>
+                </div>
+            </div>
+            
 
 
                      
