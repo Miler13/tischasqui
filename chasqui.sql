@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-09-2019 a las 06:06:21
+-- Tiempo de generación: 18-10-2019 a las 03:34:32
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -40,7 +40,8 @@ CREATE TABLE `areas` (
 INSERT INTO `areas` (`idArea`, `NombreArea`) VALUES
 (1, 'medicina '),
 (2, 'psicologia'),
-(4, 'lenguas');
+(4, 'lenguas'),
+(6, 'test');
 
 -- --------------------------------------------------------
 
@@ -65,9 +66,10 @@ CREATE TABLE `asignaciones` (
 --
 
 INSERT INTO `asignaciones` (`idAsignacion`, `Descripcion`, `idEspecialista`, `idSubArea`, `idGrupo`, `idTurno`, `idHorario`, `Estado`, `NumeroAsignacion`) VALUES
-(2, 'medicina  familiar ', 1, 1, 3, 101, 301, '1', 401),
+(2, 'medicina  familiar ', 1, 1, 3, 101, 301, '0', 1),
 (3, 'pediatria\r\n', 6, 1, 5, 101, 301, '1', 402),
-(4, 'traumatismo', 6, 1, 4, 104, 303, '1', 403);
+(4, 'traumatismo', 6, 1, 4, 104, 303, '1', 403),
+(10, 'es un buen doctor', 6, 3, 1, 0, 0, '1', 1);
 
 -- --------------------------------------------------------
 
@@ -96,16 +98,6 @@ CREATE TABLE `escribir_subareas` (
   `cartas_idcartas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `escribir_subareas`
---
-
-INSERT INTO `escribir_subareas` (`idInscripcion`, `idSubArea`, `idNino`, `fecha`, `observaciones`, `cartas_idcartas`) VALUES
-(13, 1, 1, '0000-00-00', 'none', 0),
-(14, 1, 2, '2019-06-14', 'noce', 0),
-(15, 1, 3, '2019-06-14', 'none', 0),
-(26, 2, 4, '0000-00-00', 'observaciones', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -130,12 +122,11 @@ CREATE TABLE `especialistas` (
 --
 
 INSERT INTO `especialistas` (`idEspecialista`, `NombresEspecialista`, `ApellidosEspecialista`, `CedulaEspecialista`, `CorreoEspecialista`, `CelularEspecialista`, `TelefonoEspecialista`, `DireccionEspecialista`, `Estado`, `Foto`) VALUES
-(1, 'Jaime', 'Escalante', 'jaimico', 'trueblade39@hotmail.com', '79383291', '4306891', 'Pasaje San cristobal', 1, 'images/fotos_perfil/perfil.jpg'),
-(2, 'rudy', 'arriola', 'pokemon', 'trueblade39@hotmail.com', '12345678', '', 'rererere', 1, 'images/fotos_perfil/perfil.jpg'),
+(1, 'Jaime', 'Escalante', 'jaimico', 'trueblade39@hotmail.com', '79383291', '4306891', 'Pasaje San cristobal n5', 1, 'images/fotos_perfil/perfil.jpg'),
 (3, 'nico', 'laquiere', '456', 'nico@mail.com', '888', '777', 'su casa', 1, 'images/fotos_perfil/perfil.jpg'),
-(6, 'Especialista1', 'Especialista', '1234', 'Especialista@gmail.com', '1234', '1234', 'casa', 1, 'images/fotos_perfil/perfil.jpg'),
-(7, 'as', 'asd', '70074', 'milerrojassiles@gmail.com', '12234546', '6482560', 'J. de los Rios nÂº2231', 1, 'images/fotos_perfil/perfil.jpg'),
-(9, 'das', 'asd', '12312', 'milerrojassiles@gmail.com', '12367589', '6482560', 'J. de los Rios nÂº2231', 1, 'images/fotos_perfil/perfil.jpg');
+(6, 'Especialista1', 'Especialista', '1234', 'Especialista@gmail.com', '1234', '1234567', 'casa', 1, 'images/fotos_perfil/perfil.jpg'),
+(7, 'as', 'asd', '70074', 'milerrojassiles@gmail.com', '12234547', '6482560', 'J. de los Rios nÂº2231', 1, 'images/fotos_perfil/perfil.jpg'),
+(8, 'ae', 'asd', '123155', 'nuevo@gmail.com', '12555555', '1323123', '14124', 1, 'images/fotos_perfil/perfil.jpg');
 
 -- --------------------------------------------------------
 
@@ -169,10 +160,28 @@ INSERT INTO `grupos` (`idGrupo`, `NumeroGrupo`, `NombreGrupo`) VALUES
 CREATE TABLE `mensajes` (
   `idMensaje` int(11) NOT NULL,
   `Remitente` varchar(100) NOT NULL,
-  `correo` varchar(100) NOT NULL,
+  `foto` varchar(100) NOT NULL,
   `Mensaje` varchar(500) NOT NULL,
   `FechaEnvio` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `mensajes`
+--
+
+INSERT INTO `mensajes` (`idMensaje`, `Remitente`, `foto`, `Mensaje`, `FechaEnvio`) VALUES
+(808, 'Elcon', 'images/fog-of-war-3440x1440.jpg', 'czxzxc', '2019-10-17'),
+(809, 'Elcon', 'images/fog-of-war-3440x1440.jpg', 'czxzxc', '2019-10-17'),
+(810, 'oso12', 'images/fog-of-war-3440x1440.jpg', 'aDASDGFNH', '2019-10-17'),
+(811, 'oso12', 'images/the-scenic-path-3440x1440.jpg', 'asdasdasd', '2019-10-17'),
+(812, 'oso12', ' ', 'qasdasd', '2019-10-17'),
+(813, 'oso12', ' ', 'asdasd', '2019-10-17'),
+(814, 'oso12', ' ', '123123wrewerwerqweqweweq', '2019-10-17'),
+(815, 'oso12', ' ', 'asdasdasdad', '2019-10-17'),
+(816, 'oso12', 'images/30710941_1296234603847853_880423894308093952_n.jpg', 'asdasd', '2019-10-17'),
+(817, 'oso12', ' ', 'asdasdads', '2019-10-17'),
+(818, 'mono16', ' ', 'prueba de  mono16', '2019-10-17'),
+(819, 'mono16', 'images/the-scenic-path-3440x1440.jpg', 'prube mono 16', '2019-10-17');
 
 -- --------------------------------------------------------
 
@@ -195,9 +204,14 @@ CREATE TABLE `ninos` (
 
 INSERT INTO `ninos` (`idNino`, `EdadNino`, `NombresNino`, `CedulaNino`, `Estado`, `Foto`) VALUES
 (1, '10', 'soila', '887', 1, 'images/fotos_perfil/perfil.jpg'),
-(2, '111', 'mr Roboto', '222', 1, 'images/fotos_perfil/odkJgHYE_400x400.jpg'),
 (3, '000', 'mr2', '14', 1, 'images/fotos_perfil/perfil.jpg'),
-(4, '10', 'lalolanda', '8888', 1, 'images/fotos_perfil/perfil.jpg');
+(4, '10', 'lalolanda', '8888', 1, 'images/fotos_perfil/perfil.jpg'),
+(105, '7', 'elcon', '5', 1, 'images/fotos_perfil/perfil.jpg'),
+(148, '12', 'mono12', '12', 1, 'images/mono.png'),
+(150, '12', 'perico12', '12', 1, 'images/perico.png'),
+(151, '12', 'oso12', '12', 1, 'images/oso.png'),
+(156, '12', 'oso12', '12', 1, 'images/oso.png'),
+(157, '16', 'mono16', '16', 1, 'images/mono.png');
 
 -- --------------------------------------------------------
 
@@ -233,18 +247,18 @@ CREATE TABLE `subareas` (
   `idSubArea` int(11) NOT NULL,
   `NombreSubArea` varchar(50) NOT NULL,
   `IdArea` int(11) NOT NULL,
-  `IdGrupo` int(11) NOT NULL,
-  `Idsemestre` int(11) NOT NULL
+  `IdGrupo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `subareas`
 --
 
-INSERT INTO `subareas` (`idSubArea`, `NombreSubArea`, `IdArea`, `IdGrupo`, `Idsemestre`) VALUES
-(1, 'medicina familiar', 1, 1, 1),
-(2, 'psicología Emocional', 2, 1, 1),
-(3, 'neurologia', 1, 3, 1);
+INSERT INTO `subareas` (`idSubArea`, `NombreSubArea`, `IdArea`, `IdGrupo`) VALUES
+(1, 'medicina familiar', 1, 1),
+(3, 'psicologica', 1, 1),
+(5, 'qqw', 1, 1),
+(10, 'teseee', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -266,27 +280,24 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`idUsuario`, `NombreUsuario`, `PassUsuario`, `NivelUsuario`, `Codigo`, `Foto`) VALUES
-(101, 'user1', '1234', 1, 1234, 'images/fotos_perfil/01677-500x500.jpg'),
-(102, 'soila', '887', 2, 1, NULL),
-(103, 'trueblade39@hotmail.com', 'pokemon', 2, 2, NULL),
-(104, 'tru@gmail.com', '12345', 2, 0, NULL),
+(101, 'user1', '1234', 1, 1234, 'images/fotos_perfil/667ccbc0-104f-4ad8-8cf6-000df763715a.jpg'),
 (105, 'Elcon', '1234', 3, 2020, 'images/fotos_perfil/perfil.jpg'),
 (106, 'cubito@mail.com', '123', 2, 0, NULL),
-(107, 'juan', '123', 4, 555, 'images/fotos_perfil/perfil.jpg'),
+(107, 'juan', '1234', 1, 0, 'images/fotos_perfil/perfil.jpg'),
 (108, 'asd@mail.com', '1234', 2, 0, NULL),
 (123, 'ern@mail.com', '', 4, 0, NULL),
-(124, 'asd@mail.com', '123', 4, 0, NULL),
+(124, 'asd@mail.com', '12345', 1, 0, NULL),
 (125, 'cubito@mail.com', '123', 4, 0, NULL),
 (126, 'ern@mail.com', '123', 4, 0, NULL),
-(127, 'nico@mail.com', '456', 2, 3, NULL),
+(127, 'mr2w', '14', 2, 3, NULL),
 (128, 'con@mail', '456', 4, 0, NULL),
 (129, 'cubito@mail.com', '123', 4, 0, NULL),
-(130, 'soila', '887', 3, 1, NULL),
-(131, 'Robot@mail.com', '222', 3, 2, NULL),
-(132, 'roboto@gg.com', '14', 3, 3, 'images/fotos_perfil/perfil.jpg'),
+(130, 'soila', '12345', 3, 1, NULL),
+(131, 'mr Roboto', '222', 3, 2, NULL),
+(132, 'mr2w', '14', 3, 3, 'images/fotos_perfil/perfil.jpg'),
 (133, 'lalolanda', '8888', 2, 4, NULL),
 (134, 'asd@asd.com', '111', 2, 5, 'images/fotos_perfil/perfil.jpg'),
-(135, 'lalolanda', '8888', 4, 4, NULL),
+(135, 'lalolanda', '1234', 1, 0, NULL),
 (136, 'panza@mail.com', '111', 4, 5, 'images/fotos_perfil/perfil.jpg'),
 (137, 'lalolanda', '8888', 3, 4, 'images/fotos_perfil/perfil.jpg'),
 (138, 'Especialista@gmail.com', '1234', 2, 6, 'images/fotos_perfil/perfil.jpg'),
@@ -302,7 +313,25 @@ INSERT INTO `usuarios` (`idUsuario`, `NombreUsuario`, `PassUsuario`, `NivelUsuar
 (148, 'karla@mail.com', '659832', 4, 13, 'images/fotos_perfil/perfil.jpg'),
 (149, 'milerrojassiles@gmail.com', '70074', 2, 7, 'images/fotos_perfil/perfil.jpg'),
 (150, 'koba@hotmail.com', '123456', 2, 8, 'images/fotos_perfil/perfil.jpg'),
-(151, 'milerrojassiles@gmail.com', '12312', 2, 9, 'images/fotos_perfil/perfil.jpg');
+(151, 'milerrojassiles@gmail.com', '12312', 2, 9, 'images/fotos_perfil/perfil.jpg'),
+(152, 'joserpepepe@gmail.com', '565656565', 2, 10, 'images/fotos_perfil/perfil.jpg'),
+(160, '12', 'd', 3, 45, 'oto'),
+(161, 'oso12', '12', 3, 156, 'images/oso.png'),
+(162, 'nuevo@gmail.com', '123155', 2, 8, 'images/fotos_perfil/perfil.jpg'),
+(164, 'mono16', '16', 3, 157, 'images/mono.png'),
+(165, 'editor', '1234', 4, 123, 'images/fotos_perfil/perfil.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `valeria`
+--
+
+CREATE TABLE `valeria` (
+  `idvaleria` int(11) NOT NULL,
+  `valeriacol` varchar(45) DEFAULT NULL,
+  `valeriacol1` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Índices para tablas volcadas
@@ -385,6 +414,12 @@ ALTER TABLE `usuarios`
   ADD KEY `NivelUsuario` (`NivelUsuario`);
 
 --
+-- Indices de la tabla `valeria`
+--
+ALTER TABLE `valeria`
+  ADD PRIMARY KEY (`idvaleria`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -392,25 +427,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `areas`
 --
 ALTER TABLE `areas`
-  MODIFY `idArea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idArea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `asignaciones`
 --
 ALTER TABLE `asignaciones`
-  MODIFY `idAsignacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idAsignacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `escribir_subareas`
 --
 ALTER TABLE `escribir_subareas`
-  MODIFY `idInscripcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `idInscripcion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `especialistas`
 --
 ALTER TABLE `especialistas`
-  MODIFY `idEspecialista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idEspecialista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `grupos`
@@ -422,13 +457,13 @@ ALTER TABLE `grupos`
 -- AUTO_INCREMENT de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  MODIFY `idMensaje` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idMensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=820;
 
 --
 -- AUTO_INCREMENT de la tabla `ninos`
 --
 ALTER TABLE `ninos`
-  MODIFY `idNino` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idNino` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
 
 --
 -- AUTO_INCREMENT de la tabla `niveles`
@@ -440,13 +475,13 @@ ALTER TABLE `niveles`
 -- AUTO_INCREMENT de la tabla `subareas`
 --
 ALTER TABLE `subareas`
-  MODIFY `idSubArea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idSubArea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+  MODIFY `idUsuario` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 
 --
 -- Restricciones para tablas volcadas
