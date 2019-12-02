@@ -36,10 +36,12 @@ if(isset($_SESSION['NombreUsuario'])) {
     <link href="../css/estilo.css" rel="stylesheet">
     <link href="../css/modern-business.css" rel="stylesheet">
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
     <script src="../js/jquery.js"></script>
-    <script src="js/back-to-top.js"></script>
+  
     <script src="../js/bootstrap.min.js"></script>
-      <script src="mensajes/myjava.js"></script>
+    <script src = "js/jquery-3.1.1.js"></script>
+     
 
      
 </head>
@@ -97,7 +99,7 @@ include ('menu_inicio_especialista.php');
                 <form action="validar_mensaje.php" method="post" >
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Nombre Remitente:</label>
+                            <label>Nombres Remitente:</label>
                             <input type="text" class="form-control" name="nombre" required="true" value = "<?php echo $user ?>" readonly="readonly">
                             <p class="help-block"></p>
                         </div>
@@ -129,7 +131,7 @@ include ('menu_inicio_especialista.php');
                     <div class = "form-group">
 							<label>correos:</label>
 							<select  id = "correos" name = "correos"  class = "form-control" disabled = "disabled" required = "required">
-								<option value = "">Selecciona un municipio</option>
+								<option value = "">Selecciona un correo</option>
 							</select>
 						</div>
                         </div>
@@ -159,7 +161,7 @@ include ('menu_inicio_especialista.php');
    
 
   
-<script src = "js/jquery-3.1.1.js"></script>
+
 <script type = "text/javascript">
 	$(document).ready(function(){
 		$('#idArea').on('change', function(){
