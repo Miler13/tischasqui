@@ -84,10 +84,9 @@ include ('menu_inicio_editor.php');
             -->
 
       
-
-           <!-- Content Column -->
+         <!-- Content Column -->
            
-      <div class="row">
+         <div class="row">
             <div class="col-md-8">
                 <h3>Envianos un Mensaje</h3>
                 <form action="validar_mensaje.php" method="post" >
@@ -107,16 +106,11 @@ include ('menu_inicio_editor.php');
                             <select id = "idArea" class = "form-control" name = "idArea" required = "required">
 								<option value = "">Selecciona un Area</option>
 								<?php
-									$sql = $conexion->prepare("SELECT * FROM areas");
-									if($sql->execute()){
-										$g_result = $sql->get_result();
-									}
-									while($row = $g_result->fetch_array()){
-								?>
-									<option value = "<?php echo $row['idArea']?>"><?php echo utf8_encode($row['NombreArea'])?></option>
-								<?php
-										}
-									$conexion->close();	
+                                    $sql = "SELECT * FROM areas";
+                                   $Areaaa= mysqli_query($conexion,$sql);
+                                    while($fila=mysqli_fetch_row($Areaaa)){
+                                        echo "<option value='".$fila['0']."'>".$fila['1']."</option>";
+                                        }
 								?>
 							</select>
 
@@ -152,10 +146,8 @@ include ('menu_inicio_editor.php');
 
         
 
-   
-
   
-<script src = "js/jquery-3.1.1.js"></script>
+        <script src = "js/jquery-3.1.1.js"></script>
 <script type = "text/javascript">
 	$(document).ready(function(){
 		$('#idArea').on('change', function(){
@@ -173,10 +165,9 @@ include ('menu_inicio_editor.php');
 
 
    
-  
     <!-- MODAL PARA EL REGISTRO-->
    
-            </div>
+    </div>
         </div>
     </div>
 

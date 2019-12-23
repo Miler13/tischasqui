@@ -96,7 +96,7 @@ if(isset($_SESSION['NombreUsuario'])) {
             <div class="row">
 		               <div class="col-md-1"><h4>Buscar:</h4></div>
 		               <div class="col-md-5">
-		               <input type="text" name="s" id="bs-prod" class="form-control" placeholder="Escribir el Nombre del Doctor" onkeypress="return sololetras(event)">
+		               <input type="text" name="s" id="bs-prod" class="form-control" placeholder="Escribir el Nombre del Especialista" onkeypress="return sololetras(event)">
 		               </div>
 		               	<div class="col-md-6">
 		                  <button id="nuevo-producto" class="btn btn-success"> <i class="glyphicon glyphicon-plus"></i> Nuevo Especialista</button> 

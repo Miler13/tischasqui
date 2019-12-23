@@ -22,24 +22,39 @@
     <!-- Header Carousel -->
     
 
+    
     <!-- Page Content -->
     <div class="container">
 
         <!-- Marketing Icons Section -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-16">
                 <h1 class="page-header">
-                     SISTEMA CHASQUI
+                SISTEMA CHASQUI
                 </h1>
             </div>
-            <div class="col-lg-12">
-                
+            <div class="col-lg-16">
+                <p>
+                     
+                     <h3 >
+                     Bienvenidos al Sistema de mensajeria CHASQUI
+                </h3>
+                <p>
+                <p>
+                    
+                <p>
                 <br>
+             
             </div>
-
-             <div class="row">
-             <div class="col-md-4 col-sm-4">
+            <hr>
+            <br>
+            <br>
+             <div class="row row-no-gutters">
+             <br>
+             <div class="col-md-4 col-sm-7">
                 <div class="panel panel-default text-center">
+                    
+                    
                 <div class="panel-heading">
                          <div class="wrap">
 				          <div class="widget">
@@ -80,26 +95,29 @@
 			           <script src="js/reloj.js"></script>
                      </h4>                  
                     </div>
-                </div>
-            </div>
 
-            <div class="col-md-4 col-sm-4">
+
+                    
+                </div>
+            </div>  
+          
+            <div class="col-md-4 col-sm-7">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
-                        <img src="imagenes/boletines.png" width="250" height="150">
+                    <img src="imagenes/boletines.png" width="250" height="150">
                     </div>
                     <div class="panel-body">
                         <h4>Boletines </h4>
                         <p> todas las publicaciones</p>
-                        <a href="" class="btn btn-primary"><i class="glyphicon glyphicon-download-alt"></i> Entrar</a>
-                        
-                    </div>
+                        <a href="boletines.php" class="btn btn-primary"><i class="glyphicon glyphicon-download-alt"></i> Entrar</a>
+                        </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-4">
+      
+             <div class="col-md-4 col-sm-7">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
-                        <img src="imagenes/ninos.png" width="250" height="150">
+                    <img src="imagenes/ninos.png" width="250" height="150">
                     </div>
                     <div class="panel-body">
                         <h4>Niños </h4>
@@ -109,47 +127,34 @@
                     </div>
                 </div>
             </div>
-            
 
+              
 
-                     
         </div>
         </div>
         <!-- /.row -->
-        <!-- Features Section -->
+
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Mision </h2>
+               
             </div>
-            <div class="col-md-6">
-                <p>Con el sistema chasqui para la  pubicacion y  elavoracion  de  boletines, puedes realizar todas las actividades necesarias que faciliten el manejo del cartas , entre algunas de las actividades tenemos:</p>
-                <ul>
-                    <li><strong>Administracion Especialistas</strong></li>
-                    <li><strong>Administracion Areas </strong></li>
-                    
-                    <li><strong>Administrar las cartas de los niños  evaluarlas</strong></li>
-                    
-                </ul>
-                <p>.</p>
+            <br>
+
+            <h3 >
+            <br>
+                </h3>
             </div>
-            <div class="col-md-4">
-               <!-- <img class="img-responsive img-circle" src="imagenes/nino.png" width="250" height="250"  alt="">-->
-            </div>
-        </div>
+        <!-- Features Section -->
+       
         
         <!-- /.row -->
-   <hr>
-    </div>
-    <script src="js/jquery.js"></script>
-     <script src="js/back-to-top.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
-    
+   
+        </div>
+        <br> <br>
+        <hr>
+   
 <?php
+
 include('includes/footer.php');
  ?>
 

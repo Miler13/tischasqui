@@ -12,7 +12,7 @@ $(function(){
 	});	
 	$('#bs-prod').on('keyup',function(){
 		var dato = $('#bs-prod').val();
-		var url = 'material_didactico/busca_material.php';
+		var url = 'Pclave/busca_Pclave.php';
 		$.ajax({
 		type:'POST',
 		url:url,
@@ -25,7 +25,7 @@ $(function(){
 	});	
 });
 function agregarRegistro(){
-	var url = 'material_didactico/agrega_material.php';
+	var url = 'Pclave/agrega_Pclave.php';
 	$.ajax({
 		type:'POST',
 		url:url,
@@ -35,6 +35,7 @@ function agregarRegistro(){
 			$('#formulario')[0].reset();
 			$('#mensaje').addClass('bien').html('Registro completado con exito').show(200).delay(2500).hide(200);
 			$('#agrega-registros').html(registro);
+			$('#pro').val('Registro');
 			return false;
 			}else{
 			$('#mensaje').addClass('bien').html('Edicion completada con exito').show(200).delay(2500).hide(200);
@@ -46,7 +47,7 @@ function agregarRegistro(){
 	return false;
 }
 function eliminarRegistro(id){
-	var url = 'material_didactico/elimina_material.php';
+	var url = 'Pclave/elimina_Pclave.php';
 	var pregunta = confirm('¿Esta seguro de eliminar este Registro?');
 	if(pregunta==true){
 		$.ajax({
@@ -55,7 +56,7 @@ function eliminarRegistro(id){
 		data:'id='+id,
 		success: function(registro){
 			$('#agrega-registros').html(registro);
-			return false;
+			return false;			
 		}
 	});
 	return false;
@@ -65,7 +66,7 @@ function eliminarRegistro(id){
 }
 function editarRegistro(id){
 	$('#formulario')[0].reset();
-	var url = 'material_didactico/edita_material.php';
+	var url = 'Pclave/edita_Pclave.php';
 		$.ajax({
 		type:'POST',
 		url:url,
@@ -76,14 +77,8 @@ function editarRegistro(id){
 				$('#edi').show();
 				$('#pro').val('Edicion');
 				$('#id-registro').val(id);
-				$('#nombre').val(datos[0]);
-				$('#docente').val(datos[1]);
-				$('#asignatura').val(datos[2]);
-				$('#grupo').val(datos[3]);
-				$('#turno').val(datos[4]);
-				$('#horario').val(datos[5]);
-				$('#estado').val(datos[6]);
-				$('#numero').val(datos[7]);
+				$('subarea').val(datos[0]);
+				$('Area').val(datos[1]);
 				$('#registra-datos').modal({
 					show:true,
 					backdrop:'static'
@@ -95,7 +90,7 @@ function editarRegistro(id){
 }
 
 function pagination(partida){
-	var url = 'material_didactico/paginar_material.php';
+	var url = 'Pclave/paginar_Pclave.php';
 	$.ajax({
 		type:'POST',
 		url:url,
